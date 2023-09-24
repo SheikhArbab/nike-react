@@ -1,0 +1,351 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+.active{
+  color: red;
+}
+.menuIn {
+  -webkit-animation-name: menuIn;
+  animation-name: menuIn;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+@keyframes menuIn {
+  0% {
+      transform: translateY(1rem);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateY(0rem);
+      opacity: 1;
+  }
+}
+
+
+
+
+/* PRODUCT DETAILS CAROUSEL STYLING CUSTOMIZATION START */
+.productCarousel.carousel-root {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+}
+.productCarousel.carousel-root .carousel {
+    width: auto;
+}
+.productCarousel.carousel-root .carousel.carousel-slider {
+    width: 100%;
+}
+.productCarousel.carousel-root .carousel.carousel-slider .slider-wrapper {
+    border-radius: 10px;
+}
+.productCarousel.carousel-root .carousel .thumbs-wrapper {
+    margin: 0;
+}
+.productCarousel.carousel-root .carousel .thumb {
+    height: 60px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+.productCarousel.carousel-root .carousel .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.productCarousel.carousel-root .carousel .thumb:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+}
+.productCarousel.carousel-root .carousel .thumb.selected,
+.productCarousel.carousel-root .carousel .thumb:hover {
+    border: 0;
+}
+.productCarousel.carousel-root .carousel .thumb:hover:after,
+.productCarousel.carousel-root .carousel .thumb.selected:after {
+    opacity: 0.2;
+}
+.productCarousel .control-arrow {
+    display: none;
+}
+@media screen and (max-width: 767px) {
+    .productCarousel.carousel-root {
+        flex-direction: column;
+    }
+    .productCarousel.carousel-root .carousel .thumb {
+        border: 0;
+        padding: 0;
+    }
+}
+@media screen and (min-width: 768px) {
+    .productCarousel.carousel-root .carousel .thumbs {
+        transform: none !important;
+        flex-direction: column;
+        display: flex;
+        gap: 10px;
+    }
+    .productCarousel.carousel-root .carousel .thumb {
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+}
+/* PRODUCT DETAILS CAROUSEL STYLING CUSTOMIZATION END */
+
+.markdown ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: disc;
+    margin: 20px 0;
+}
+.markdown ul li {
+    margin: 10px 0;
+}
+
+/* 
+Button insperation by @ke1221
+Menu icon transofmation insperation by @Ali-Tahmazi99
+*/
+.menuButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 13%;
+  color: #090909;
+  width: 2em;
+  height: 2em;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+.menuButton:hover {
+  border: 1px solid white;
+}
+
+.menuButton:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+             inset -4px -4px 12px #ffffff;
+}
+
+input[type = "checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.menuButton span {
+  width: 20px;
+  height: 2px;
+  background: #131313;
+  border-radius: 100px;
+  transition: 0.3s ease;
+}
+
+input[type]:checked ~ span.top {
+  transform: translateY(290%)rotate(45deg);
+  width: 20px;
+}
+
+input[type]:checked ~ span.bot {
+  transform: translateY(-270%) rotate(-45deg);
+  width: 20px;
+  box-shadow: 0 0 10px #495057;
+}
+
+input[type]:checked ~ span.mid {
+  transform: translateX(-25px);
+  opacity: 0;
+}
+
+
+
+/* Change the background color of the right indicator */
+.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left {
+  background-color: black;
+  z-index: 1;
+  transition: opacity 0.3s; /* Add a smooth transition effect */
+}
+
+/* Change the background color of the right indicator */
+.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
+  background-color: black;
+  z-index: 1;
+  transition: opacity 0.3s; /* Add a smooth transition effect */
+}
+
+/* Lower opacity on hover for both left and right indicators */
+.react-multiple-carousel__arrow:hover {
+  opacity: 0.7; /* Adjust the opacity value as needed */
+}
+
+
+/* product card */
+
+
+
+.button {
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #222;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+}
+
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: #555;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #555;
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after,.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button:hover {
+  background: #222;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+.button:hover:before,.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
+
+
+
+
+
+
+
+
+  /* scroll bar */
+
+
+::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9b9b9b;
+  }
+
+
+
