@@ -10,19 +10,19 @@ const Footer = () => {
                 <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row">
                     {/* MENU START */}
                     <div className="flex flex-col gap-3 shrink-0">
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
+                        <div className="font-oswald font-medium uppercase text-sm ">
                             Find a store
                         </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
+                        <div className="font-oswald font-medium uppercase text-sm ">
                             become a partner
                         </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
+                        <div className="font-oswald font-medium uppercase text-sm ">
                             sign up for email
                         </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
+                        <div className="font-oswald font-medium uppercase text-sm ">
                             send us feedback
                         </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
+                        <div className="font-oswald font-medium uppercase text-sm ">
                             student discount
                         </div>
                     </div>
@@ -32,44 +32,44 @@ const Footer = () => {
                     <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] shrink-0">
                         {/* MENU START */}
                         <div className="flex flex-col gap-3 ">
-                            <div className="font-oswald font-medium uppercase text-sm">
+                            <Link to={'/d'} className="font-oswald font-medium uppercase text-sm">
                                 get help
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+                            </Link>
+                            <Link to={'/d'} className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
                                 Order Status
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+                            </Link>
+                            <Link to={'/d'} className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
                                 Delivery
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+                            </Link>
+                            <Link to={'/d'} className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
                                 Returns
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+                            </Link>
+                            <Link to={'/p'} className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
                                 Payment Options
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+                            </Link>
+                            <Link to={'/contact'} className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
                                 Contact Us
-                            </div>
+                            </Link>
                         </div>
                         {/* MENU END */}
 
                         {/* MENU START */}
                         <div className="flex flex-col gap-3">
-                            <div className="font-oswald font-medium uppercase text-sm">
+                            <Link to={'/a'} className="font-oswald font-medium uppercase text-sm">
                                 About nike
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+                            </Link>
+                            <Link to={'/a'} className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
                                 News
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+                            </Link>
+                            <Link to={'/a'} className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
                                 Careers
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+                            </Link>
+                            <Link to={'/a'} className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
                                 Investors
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+                            </Link>
+                            <Link to={'/a'} className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
                                 Sustainability
-                            </div>
+                            </Link>
                         </div>
                         {/* MENU END */}
                     </div>
@@ -112,23 +112,41 @@ const Footer = () => {
             </div>
             <div className="flex justify-between mt-10 flex-col md:flex-row gap-[10px] md:gap-0 w-full max-w-[1290px ] px-5 md:px-10 mx-auto flex items-center justify-between ">
                 {/* LEFT START */}
-                <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer text-center md:text-left">
+                <div
+                onClick={() =>{
+                    window.open('https://sheikharbab.github.io/portfolio/', "_blank")
+                }}
+                className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer text-center md:text-left">
                     © 2023 Nike, Inc. All Rights Reserved
                 </div>
                 {/* LEFT END */}
 
                 {/* RIGHT START */}
                 <div className="flex gap-2 md:gap-5 text-center md:text-left flex-wrap justify-center">
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
+                    <div onClick={() =>{
+                        window.open('https://sheikharbab.github.io/portfolio/', "_blank")
+                    }} className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
                         Guides
                     </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
+                    <div 
+                    onClick={() =>{
+                        window.open('https://sheikharbab.github.io/portfolio/', "_blank")
+                    }}
+                    className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
                         Terms of Sale
                     </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
+                    <div
+                    onClick={() =>{
+                        window.open('https://sheikharbab.github.io/portfolio/', "_blank")
+                    }}
+                     className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
                         Terms of Use
                     </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
+                    <div
+                    onClick={() =>{
+                        window.open('https://sheikharbab.github.io/portfolio/', "_blank")
+                    }}
+                     className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
                         Privacy Policy
                     </div>
                 </div>

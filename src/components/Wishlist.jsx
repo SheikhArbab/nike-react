@@ -55,7 +55,7 @@ const Wishlist = () => {
                   onClick={handleWish}
                   to={'/'} className='mt-10 text-white bg-black px-4 py-2 rounded-lg hover:opacity-75 active:scale-95'>  Continue shopping</Link>
 
-
+              
               </div>
 
 
@@ -68,7 +68,7 @@ const Wishlist = () => {
                   .replace(/-+/g, '-');
 
                 return (
-                  <div>
+                  <div key={product.id}>
                     <Link
                       to={`/product/${slug}#header`}
                       key={product.id}

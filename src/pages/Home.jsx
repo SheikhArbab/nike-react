@@ -28,8 +28,7 @@ const Home = () => {
 
 
 
-
-        <div className='w-full h-fit gap-5 py-10 flex flex-wrap items-center justify-center'>
+        <div className='w-full h-fit gap-5 pb-20 flex flex-wrap items-center justify-center'>
           <ProductCard  />
 
         </div>

@@ -68,7 +68,7 @@ const Sidebar = () => {
 
 
               (products.map((product) => (
-                  <div  className='flex py-3 items-center w-full justify-between px-2 shadow-md'>
+                  <div  key={product.id} className='flex py-3 items-center w-full justify-between px-2 shadow-md'>
                   <img src={product.image} className='object-contain w-28 h-32 me-2' alt='' />
                   <div>
                     <h1>{product.title.slice(0, 19)}...</h1>

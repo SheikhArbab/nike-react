@@ -1,34 +1,56 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { IoMdHeartEmpty } from 'react-icons/io';
-import { useDispatch } from 'react-redux';
-import { addToWish } from '../features/addToWish/addWishSlice';
-import 'react-toastify/dist/ReactToastify.css';
 import { useGetProductsQuery } from '../services/productsApi';
-import ProductIsLoaidng from './ProductIsLoaidng';
+import { Link, useParams } from 'react-router-dom';
+import LoadingSpiner from './../components/LoadingSpiner';
+import { IoMdHeartEmpty } from 'react-icons/io';
 
-const ProductCard = () => {
-  const dispatch = useDispatch();
+
+const Category = () => {
   const { error, data, isLoading } = useGetProductsQuery();
+  const { category } = useParams();
 
-  if (isLoading) return <ProductIsLoaidng />;
+  if (isLoading) return <LoadingSpiner />;
 
   if (error) {
     console.error('Error fetching products:', error);
     return <div>Error: {error.message}</div>;
   }
 
-  const handleAddToWish = (prod) => {
 
-    dispatch(addToWish(prod));
+  const products = data.filter((item) =>
+    item.category.toLowerCase()
+      .replace(/[^a-z0-9 -]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-') === category
+  );
 
-  };
-
-  
+  if (!products || products.length === 0) {
+    return <div>Product not found</div>;
+  }
 
   return (
     <>
-      {data.map((product) => {
+
+
+      <div className='flex items-center justify-center flex-wrap gap-5 py-24'>
+
+        {/* filter side start */}
+
+
+<div></div>
+
+
+
+        {/* filter side end */}
+
+
+
+        {/* products start */}
+
+
+        <div className='flex flex-wrap items-center justify-center gap-4'>
+
+  {products.map((product) => {
         const slug = product.title
           .toLowerCase()
           .replace(/[^a-z0-9 -]/g, '')
@@ -106,8 +128,15 @@ const ProductCard = () => {
       })}
     
 
+
+        </div>
+
+        {/* products end */}
+
+      </div>
+
     </>
   );
-};
+}
 
-export default ProductCard;
+export default Category;
