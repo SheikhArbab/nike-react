@@ -3,9 +3,12 @@ import { useGetProductsQuery } from '../services/productsApi';
 import { Link, useParams } from 'react-router-dom';
 import LoadingSpiner from './../components/LoadingSpiner';
 import { IoMdHeartEmpty } from 'react-icons/io';
+import { addToWish } from '../features/addToWish/addWishSlice';
+import { useDispatch } from 'react-redux';
 
 
 const Category = () => {
+  const dispatch = useDispatch();
   const { error, data, isLoading } = useGetProductsQuery();
   const { category } = useParams();
 
@@ -15,6 +18,11 @@ const Category = () => {
     console.error('Error fetching products:', error);
     return <div>Error: {error.message}</div>;
   }
+  const handleAddToWish = (prod) => {
+
+    dispatch(addToWish(prod));
+
+  };
 
 
   const products = data.filter((item) =>

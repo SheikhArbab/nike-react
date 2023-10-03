@@ -91,7 +91,7 @@ const Sidebar = () => {
                         +
                       </button>
                       <div className='bg-black/[0.1] w-full flex items-center justify-center'>{product.quantity}</div>
-                      <button onClick={() => handleRemoveCart(product)} className='font-semibold border-l flex items-center
+                      <button disabled={product.quantity <= 1 ? true : false} onClick={() => handleRemoveCart(product)} className='font-semibold border-l flex items-center
                        justify-center px-2'>
                         -
                       </button>
